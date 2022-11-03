@@ -1,0 +1,65 @@
+
+
+.body {
+  background-color: white;
+}
+
+.header {
+  display: grid;
+  place-items: right;
+  margin-left: 10vw;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  margin-right: 3vw;
+  font-family:'Lucida Sans';
+}
+
+.serializedJSON {
+  margin-inline: 0vw;
+  font-weight: normal;
+}
+
+.artist {
+  margin-top: 3vh;
+  color: #ec3131;
+}
+
+.title {
+  margin-top: 1vh;
+  color: #17aea9;
+}
+
+.year {
+  color: black;
+  font-weight: normal;
+}
+
+.filter {
+  display: flex;
+  margin-bottom: 2vh;
+}
+
+.filter > select {
+  padding: 10px;
+  margin: 10px;
+}
+
+.filter > button {
+  padding-block: 10px;
+  padding-inline: 15px;
+  margin: 10px;
+  border: 0px;
+  background-color: #40ff53;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter > button:hover {
+  background-color: #00ab25;
+}
+
+label {
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+}

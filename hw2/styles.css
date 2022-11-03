@@ -1,0 +1,347 @@
+    *   {
+        margin: 0;
+    }
+    
+    body {
+        font-family: Helvetica, sans-serif;
+        background-color:rgb(242, 242, 242);
+    }
+
+    .center {
+        margin-top: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .navbar > a {
+        font-size: min(6vw, 3.5vh);
+        padding: 2vw;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .navbar > a:visited {
+        color: white;
+    }
+    
+    .headerText > h1 {
+        font-weight: bold;
+        font-size: 5vw;
+        text-align: center;
+        color: white;
+        padding-top: 50px;
+    }
+    
+    .headerText > h2 {
+        font-size: min(8vw, 5vh);
+        font-weight: 200;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        padding-inline: 20px;
+    }
+    
+    .main {
+        padding-inline: 20px;
+    }
+    
+    .main > h2 {
+        font-size: min(6vw, 3.5vh);
+        font-weight: bold;
+        text-align: center;
+        color: black;
+        padding-top: 100px;
+    }
+    
+    .main > h3 {
+        font-size: min(5vw, 3vh);
+        color: grey;
+        text-align: center;
+        font-weight: normal;
+        padding-top: 40px;
+    }
+    
+    .reviewCard {
+        width: min(800px, 90vw);
+        height: max(30vh, 25vw);
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        margin-top: 40px;
+        border-radius: 20px;
+        background-color: white;
+    }
+    
+    .reviewCardHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: max(3vh, 3vw);
+    }
+    
+    .reviewCardPersona {
+        display: flex;
+        width: 20%;
+    }
+    
+    .reviewCardPersona > img {
+        width: 60%;
+        max-width: 100%;
+    }
+    
+    .reviewCardInfo {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .reviewCardInfo > h2 {
+        font-weight: normal;
+        font-size: min(5vw, 3vh);
+    }
+    
+    .reviewCardRating {
+        text-align: center;
+    }
+    
+    .reviewCardRating > h2 {
+        font-size: min(6vw, 3.5vh);
+        margin-top: -20px;
+    }
+    
+    .reviewCardDesc > h2 {
+        font-size: min(5vw, 2.5vh);
+        text-align: normal;
+        font-weight: normal;
+        padding: max(3vh, 3vw);
+    }
+    
+    .CTA {
+        text-align: center;
+        font-size: min(10vw, 5vh);
+    }
+    
+    .CTA>h2 {
+        font-size: 6vh;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+        padding-top: 100px;
+    }
+    
+    .CTA button {
+        font-size: 3vh;
+        font-weight: bold;
+        color: white;
+        border-style: none;
+        background-color: #1A8FE3;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-family: "Georgia", serif;
+    }
+    
+    .CTA button:hover {
+        background-color: #1869a3;
+        cursor: pointer;
+    }
+    
+    .footer {
+        padding-top: 100px;
+    }
+    
+    .footer > hr {
+        margin-inline: 30px;
+    }
+    
+    .footerInfo {
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footerInfo > h2 {
+        font-weight: normal;
+        font-size: 2vh;
+    }
+    
+    .tiers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-inline: 5vw;
+        margin-top: 5a50px;
+    }
+    
+    .tiersCard {
+        flex: 1 1 150px;
+        margin: 10px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow:rgba(0, 0, 0, 0.04);
+        width: 200px;
+        height: 350px;
+        text-align: center;
+        padding: 20px;
+        font-family: "Georgia", serif;
+    }
+    
+    .tiersCard > h2 {
+        font-size: 8vh;
+        padding-top: 40px;
+    }
+    
+    .tiersCard > h4 {
+        padding-top: 40px;
+        font-size: 100px;
+    }
+    
+    .tiersCard > h3 {
+        padding-top: 40px;
+        font-family: Helvetica, sans-serif;
+        margin-inline: 10px;
+    }
+    
+    .tiersCard > ul {
+        list-style-type: disc;
+        font-size: 2.5vh;
+        padding-top: 60px;
+    }
+
+    .tiersServ {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-inline: 5vw;
+        margin-top: 5a50px;
+    }
+    
+    .tiersCardServ {
+        flex: 1 1 150px;
+        margin: 10px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow:rgba(0, 0, 0, 0.04);
+        width: 300px;
+        height: 2000x;
+        text-align: center;
+        padding: 20px;
+        font-family: "Georgia", serif;
+    }
+    
+    .tiersCardServ > h2 {
+        font-size: 8vh;
+        padding-top: 40px;
+    }
+    
+    .tiersCardServ > h4 {
+        padding-top: 40px;
+        font-size: 100px;
+    }
+    
+    .tiersCardServ > h3 {
+        padding-top: 40px;
+        font-family: Helvetica, sans-serif;
+        text-align: left;
+        margin-inline: 10px;
+    }
+    
+    .tiersCardServ > ul {
+        list-style-type: disc;
+        text-align: left;
+        font-size: 2.5vh;
+        padding-top: 60px;
+    }
+    
+    .serviceButton {
+        display: grid;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .serviceButton > button {
+        font-size: 2.5vh;
+        font-weight: bold;
+        color: white;
+        border-style: none;
+        background-color: #1A8FE3;
+        padding: 20px;
+        margin-top: 40px;
+        text-align: center;
+        border-radius: 15px;
+        cursor: pointer;
+        font-family: "Georgia", serif;
+    }
+
+    .contactForm {
+        display: grid;
+        place-items: center;
+        padding-top: 80px;
+    }
+    
+    .contactForm h2 {
+        font-size: 1.8vh;
+    }
+    
+    .contactFormName {
+        margin: 20px;
+    }
+    
+    .contactForm input {
+        border: none;
+        background-color: rgb(219, 219, 219);
+        margin-top: 20px;
+        height: 20px;
+        width: min(70vh, 70vw);
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 2vh;
+    }
+    
+    .contactForm textarea {
+        border: none;
+        background-color: rgb(219, 219, 219);
+        margin-top: 20px;
+        height: 250px;
+        width: min(70vh, 70vw);
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 2vh;
+        text-align: left;
+        font-family: Helvetica, sans-serif;
+    }
+    
+    .contactFormEmail {
+        margin: 20px;
+    }
+    
+    .contactFormBody {
+        margin: 20px;
+    }
+
+    .contactFormSubmit {
+        justify-content: center;
+        font-size: 2vh;
+        font-weight: bold;
+        color: white;
+        border-style: none;
+        background-color: #1A8FE3;
+        margin-top: 20px;
+        height: 60px;
+        width: min(50vh, 50vw);
+        padding: 20px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    
+    .contactFormSubmit:hover {
+        background-color: #1869a3;
+        cursor: pointer;
+    }

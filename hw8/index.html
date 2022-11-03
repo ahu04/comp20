@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CS20 HW8: APIs</title>
+</head>
+<script>
+
+    // using AJAX
+    function getUsingAJAX() {
+        req = new XMLHttpRequest();
+        console.log("1 - Request Created");
+        req.open("GET", "https://zoo-animal-api.herokuapp.com/animals/rand/5", true);
+        console.log("2 - Opened Request");
+        req.onreadystatechange = function () {
+            if (req.readyState == 4 && req.status == 200) {
+                data = req.responseText;
+                data = JSON.parse(data);
+
+                console.log(data);
+                for (i = 0; i < 5; i++) {
+                    // construct data in a div
+                    var fact_container = "<div class='dog_fact_container'>";
+                    fact_container += "<h2> Name: " + data[i].name + "</h2>";
+                    fact_container += "<h2> Latin name: " + data[i].latin_name + "</h2>";
+                    fact_container += "<h2> Animal type: " + data[i].animal_type + "</h2>";
+                    fact_container += "<h2> Activity: " + data[i].active_time + "</h2>";
+                    fact_container += "<h2> Lifespan: " + data[i].lifespan + " years</h2>";
+                    fact_container += "<h2> Weight: " + data[i].weight_max + " lbs</h2>";
+                    fact_container += "<h2> Habitat: " + data[i].habitat + "</h2>";
+                    fact_container += "<h2> Diet: " + data[i].diet + "</h2>";
+                    fact_container += "</div>";
+
+                    // write data to HTML
+                    document.getElementById("dataContainer").innerHTML += fact_container;
+                }
+                document.getElementById("data").innerHTML = "Here are some fun facts about some animals:"
+            }
+            else if (req.readyState == 4 && req.status != 200) {
+                document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails.";
+            }
+            else if (req.readyState == 3) {
+                document.getElementById("data").innerHTML = "Almost done...";
+            }
+        }
+        req.send();
+    }
+
+    // using fetch
+    res = fetch("https://zoo-animal-api.herokuapp.com/animals/rand/5")
+        .then(res => res.text())
+        .then(data => {
+            data = JSON.parse(data);
+        })
+        .catch(error => console.log(error));
+
+</script>
+
+<body onload="getUsingAJAX()">
+    <div class="container">
+        <div>
+            <div id="dataContainer">
+                <h1 id="data">Loading data...
+                </h1>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="info">
+            <h1>Info about API:</h1>
+            <h2>This API fetches facts about several animals. Pretty neat! Above, I've picked 5 random animals. </h2>
+        </div>
+    </div>
+</body>
+
+</html>

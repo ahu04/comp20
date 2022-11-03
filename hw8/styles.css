@@ -1,0 +1,33 @@
+body {
+        background-color: rgb(252, 255, 204);
+        color: rgb(0, 0, 0);
+    }
+    
+    #timeHeader, #data {
+        color:rgb(0, 0, 0);
+    }
+    
+    hr {
+        border: 2px solid rgb(98, 93, 77);
+        margin-inline: 20vw;
+    }
+    
+    .container {
+        margin-inline: 20vw;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    h2 {
+        font-size: 15px;
+        text-align: left !important;
+    }
+    
+    .dog_fact_container {
+        display: block;
+        gap: 10px;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }

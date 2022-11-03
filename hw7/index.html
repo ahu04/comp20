@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>HW7: JSON Songs</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        function displayJSON() {
+            $.getJSON("https://api.jsonbin.io/v3/b/635aadd02b3499323bec7c4d", function(data) {
+                document.getElementById("plainJson").innerHTML = JSON.stringify(data.record);
+
+                var songlist = data.record.songlist;
+                var JSONbody = "";
+                for (var i = 0; i < songlist.length; ++i) {
+                    item = songlist[i];
+                    var artist = item.artist;
+                    JSONbody += "<h1 class='artist'>" + artist + "</h1>";
+                    
+                    var songs = item.songs;
+                    for (var j = 0; j < songs.length; ++j) {
+                        var song = songs[j];
+                        JSONbody += "<h3 class='title'>" + song.title + "</h3>";
+                        JSONbody += "<h4 class='year'>" + song.year + "</h4>";
+
+                        var genre = song.genre;
+                        JSONbody += "<h4 class='genre'>" + genre.join(", ") + "</h4>";
+                    }
+                }
+                document.getElementById("jsonFormatted").innerHTML = JSONbody;
+
+                // display json data genres + ability to filter
+                var genreSelected = document.getElementById("genres");
+                var selected = genreSelected.options[genreSelected.selectedIndex].text;
+                var songsarray = [];
+                if (selected != "All Genres") {
+                    for (var k = 0; k < songlist.length; ++k) {
+                        var songs = songlist[k].songs;
+                        for (var l = 0; l < songs.length; ++l) {
+                            var genres = songs[l].genre;
+                            for (var m = 0; m < genres.length; ++m) {
+                                if (genres[m] == selected) {
+                                    songsarray.push(songs[l].title);
+                                }
+                            }
+                        }
+                    }
+                }
+                else {
+                    for (let k = 0; k < songlist.length; ++k) {
+                        var songs = songlist[k].songs;
+                        for (let l = 0; l < songs.length; ++l) {
+                            var genres = songs[l].genre;
+                            for (let m = 0; m < genres.length; ++m) {
+                                    songsarray.push(songs[l].title);
+                            }
+                        }
+                    }
+                }
+                
+                document.getElementById("filteredSongs").innerHTML = songsarray.join(", ");
+            }).fail(function(){
+                alert("An error has occurred fetching the json file.");
+            });
+        }
+    </script>
+</head>
+<body onload="displayJSON()">
+    <div class="header">
+        <h2> Raw Json: </h2>
+        <h4 id="plainJson" class="serializedJSON"></h4>
+    </div>
+    <div class="header">
+        <h2> CSS styled Json: </h2> 
+        <div id="jsonFormatted"></div>
+    </div>
+    <div class="header">
+        <h2> Get songs by genre: </h2>
+        <label for="genres"> </label>
+        <div class="filter">
+            <select name="genres" id="genres">
+                <option value="indie">Indie</option>
+                <option value="hiphop">Hip-hop</option>
+                <option value="pop">Pop</option>
+                <option value="softrock">Soft Rock</option>
+                <option value="allgenres">All Genres</option>
+            </select>
+            <button onclick="displayJSON()">Filter</button>
+        </div>
+        <h2>Songs with that genre:</h2>
+        <div id="filteredSongs"></div>
+    </div>
+</body>
+</html>

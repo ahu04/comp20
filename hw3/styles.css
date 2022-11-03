@@ -1,0 +1,26 @@
+*   {
+        margin: 10px;
+    }
+    
+    CATALOG {
+        background-color: #ffffff;
+        width: 100%;
+    }
+
+    TITLE {
+        display: block;
+        color: #000000;
+        font-size: 20pt;
+        margin-left = 50px;
+    }
+    ARTIST {
+        display: block;
+        color: #48e3d4;
+        font-size: 15pt;
+        margin-left = 50px;
+    }
+    GENRE, YEAR {
+        display: block;
+        color: #168f46;
+        margin-left = 50px;
+    }

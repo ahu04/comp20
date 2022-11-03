@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="styles.css"?>
+<Catalog>
+        <Song>
+                <TITLE> Real Gone </TITLE>
+                <ARTIST> Sheryl Crow </ARTIST>
+                <GENRE> Pop </GENRE>
+                <YEAR> 2006 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Life is a Highway </TITLE>
+                <ARTIST> Rascal Flatts </ARTIST>
+                <GENRE> Country </GENRE>
+                <GENRE> Pop </GENRE>
+                <YEAR> 2006 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Best Friend </TITLE>
+                <ARTIST> Rex Orange County </ARTIST>
+                <GENRE> Indie </GENRE>
+                <GENRE> Pop </GENRE>
+                <YEAR> 2017 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Sunflower </TITLE>
+                <ARTIST> Rex Orange County </ARTIST>
+                <GENRE> Indie </GENRE>
+                <GENRE> POP </GENRE>
+                <YEAR> 2017 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Pluto Projector </TITLE>
+                <ARTIST> Rex Orange County </ARTIST>
+                <GENRE> Indie </GENRE>
+                <GENRE> Soul </GENRE>
+                <GENRE> RB </GENRE>
+                <YEAR> 2019 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Curduroy Dreams </TITLE>
+                <ARTIST> Rex Orange County </ARTIST>
+                <GENRE> Indie </GENRE>
+                <GENRE> POP </GENRE>
+                <YEAR> 2015 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Television / So Far So Good </TITLE>
+                <ARTIST> Rex Orange County </ARTIST>
+                <GENRE> Indie </GENRE>
+                <GENRE> Pop </GENRE>
+                <YEAR> 2017 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> The Spins </TITLE>
+                <ARTIST> Mac Miller </ARTIST>
+                <GENRE> Rap </GENRE>
+                <GENRE> Hip-Hop </GENRE>
+                <YEAR> 2012 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Blue World </TITLE>
+                <ARTIST> Mac Miller </ARTIST>
+                <GENRE> Rap </GENRE>
+                <GENRE> Hip-Hop </GENRE>
+                <YEAR> 2020 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Good News </TITLE>
+                <ARTIST> Mac Miller </ARTIST>
+                <GENRE> Rap </GENRE>
+                <GENRE> Hip-Hop </GENRE>
+                <YEAR> 2020 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Bubble Gum </TITLE>
+                <ARTIST> Clairo </ARTIST>
+                <GENRE> Indie </GENRE>
+                <GENRE> Alternative </GENRE>
+                <YEAR> 2015 </YEAR>
+        </Song>
+
+        <Song>
+                <TITLE> Chicago </TITLE>
+                <ARTIST> Michael Jackson </ARTIST>
+                <GENRE> Dance Pop </GENRE>
+                <YEAR> 2014 </YEAR>
+        </Song>
+
+</Catalog>

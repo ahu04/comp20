@@ -1,0 +1,10 @@
+.userInfo {
+        display: block;
+        width: 150px;
+}
+
+
+.userInfoaddress {
+        display: none;
+        width: 150px;
+}

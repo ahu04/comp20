@@ -1,0 +1,100 @@
+{
+        "songlist": [
+            {
+                "artist": "Rex Orange County",
+                "songs": [
+                    {
+                        "title": "Best Friend",
+                        "year": 2017,
+                        "genre": [
+                            "Indie",
+                            "Pop"
+                        ]
+                    },
+                    {
+                        "title": "Pluto Projector",
+                        "year": 2019,
+                        "genre": [
+                            "Indie",
+                            "Pop"
+                        ]
+                    },
+                    {
+                        "title": "Curduroy Dreams",
+                        "year": 2019,
+                        "genre": ["Indie"]
+                    },
+                    {
+                        "title": "Sunflower",
+                        "year": 2017,
+                        "genre": [
+                            "Indie",
+                            "Pop"
+                        ]
+                    },
+                    {
+                        "title": "Television / So Far So Good",
+                        "year": 2017,
+                        "genre": [
+                            "Indie",
+                            "Pop"
+                        ]
+                    }
+                ]
+            },
+            {
+                "artist": "Mac Miller",
+                "songs": [
+                    {
+                        "title": "The Spins",
+                        "year": 2012,
+                        "genre": [ "Hip-hop", "Pop" ]
+                    },
+                    {
+                        "title": "Blue World",
+                        "year": 2020,
+                        "genre": [ "Hip-hop", "Pop" ]
+                    },
+                    {
+                        "title": "Good News",
+                        "year": 2020,
+                        "genre": [ "Hip-hop" ]
+                    },
+                    {
+                        "title": "Knock Knock",
+                        "year": 2010,
+                        "genre": [ "Hip-hop" ]
+                    }
+                ]
+            },
+            {
+                "artist": "Billy Joel",
+                "songs": [
+                    {
+                        "title": "Vienna",
+                        "year": 1977,
+                        "genre": [
+                            "Soft Rock",
+                            "Pop"
+                        ]
+                    },
+                    {
+                        "title": "Movin' Out",
+                        "year": 1977,
+                        "genre": [
+                                "Soft Rock",
+                                "Pop"
+                        ]
+                    },
+                    {
+                        "title": "Only the Good Die Young",
+                        "year": 1977,
+                        "genre": [
+                                "Soft Rock",
+                                "Pop"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }

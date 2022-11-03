@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<UniversityList>
+
+        <University>
+                <Name> Rice University </Name>
+                <State> Texas </State>
+                <EnrolledStudents> 4247 </EnrolledStudents>
+                <CompStudents> 1056 </CompStudents>
+        </University>
+
+         <University>
+                <Name> Stanford University </Name>
+                <State> Stanford </State>
+                <EnrolledStudents> 7645 </EnrolledStudents>
+                <CompStudents> 2398 </CompStudents>
+        </University>
+
+         <University>
+                <Name> Tufts University </Name>
+                <State> 6676 </State>
+                <EnrolledStudents> 6676</EnrolledStudents>
+                <CompStudents> 1529 </CompStudents>
+        </University>
+
+</UniversityList>

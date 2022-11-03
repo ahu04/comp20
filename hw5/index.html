@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <div class = "isAmicable"> 
+                <p> <span id = "amicable"> </span> </p>
+        </div>
+
+        <div class = "displayFactors">
+                <p> The factors for the first number are: <span id = "firstFactor" > </span></p>
+                <P> The factors for the second number are: <span id = "secondFactor" > </span></P>
+        </div>
+
+        <script>
+                function isFactor(x, y) {
+                        // is x a factor of y
+                        if (y % x == 0 ||  x == 1) {
+                                return true;
+                        }
+                        return false;
+                }
+
+                function getFactors(num) {
+                        var ans = []
+
+                        for (i = 1; i < num; i++) {
+                                if (isFactor(i, num)) {
+                                        ans.push(i);
+                                }
+                        }
+                        return ans;
+                }
+
+                function sumArr(array) {
+                        var count=0;
+                        for (i = 0; i < array.length; i++) {
+                                count += array[i];
+                        }
+                        return count;
+                }
+
+                function isAmicable(x, y) {
+                        var firstArr = getFactors(x)
+                        var secondArr = getFactors(y)
+                        if (sumArr(firstArr) == y && sumArr(secondArr) == x) {
+                                return true;
+                        }
+                        else {
+                                return false;
+                        }
+                }
+
+                let firstNum = prompt("Enter first number");
+                firstNum = Number(firstNum);
+                let secondNum = prompt("Enter second number");
+                secondNum = Number(secondNum);
+                let amicable = isAmicable(firstNum, secondNum);
+                
+                if (amicable) {
+                        document.getElementById("amicable").innerHTML = "The numbers: " + firstNum + " and " +
+                        secondNum + " are amicable."; 
+                }
+                else {
+                        document.getElementById("amicable").innerHTML = "The numbers: " + firstNum + " and " +
+                        secondNum + " are not amicable.";
+                }
+
+                let firstArr = getFactors(firstNum);
+                let secondArr = getFactors(secondNum);
+
+                var factors = "";
+                for (i = 0; i < firstArr.length; i++) {
+                        factors += firstArr[i].toString() + " ";
+                }
+
+                document.getElementById("firstFactor").innerHTML = factors;
+                
+                var factorsSec = "";
+                for (i = 0; i < secondArr.length; i++) {
+                        factorsSec += secondArr[i].toString() + " ";
+                }
+
+                document.getElementById("secondFactor").innerHTML = factorsSec;
+
+                
+        </script>
+
+</body>
+</html>

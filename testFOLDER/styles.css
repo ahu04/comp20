@@ -1,0 +1,46 @@
+ul li a {
+        color: #435562; 
+        font-size: 200px;
+        text-decoration:none;
+}
+
+mybox {
+        border: 2px solid #ff6600;
+}
+
+<div id='myboxes'>
+<div class='box'>This box is red</div>
+<div class='box'>This box is blue</div>
+</div>  
+
+the boxes are each 250px wide  x 300px tall
+the text color is white
+the background color for each box is the stated color (red or blue)
+the boxes should appear side by side 
+there should be 50px between them
+the set of boxes should be centered on the page
+you do NOT need to worry about making this responsive 
+
+myboxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+    
+.box:nth-child(1) {
+        flex: 1 1 150px;
+        color: white;
+        background-color: red;
+        width: 250px;
+        height: 300px;
+        margin: 50px;
+}
+
+.box:nth-child(2) {
+        flex: 1 1 150px;
+        color: white;
+        background-color: blue;
+        width: 250px;
+        height: 300px;
+        margin: 50px;
+}

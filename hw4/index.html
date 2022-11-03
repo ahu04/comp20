@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joe's Hotdog Stand - the best in town</title>
+        <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+        <img src = "hotdog.jpg" class = "header">
+
+
+        <div class = "info" > 
+                <h1> Thanks for ordering from Joe's hotdogs! Here's your receipt. </h1>    
+        </div>
+
+        <div class = "receipt"> 
+                <div class = "receiptCard">
+                        <img src = "fries.jpg">
+                </div>
+                <div class = "receiptCard" >
+                        <p> Hotdogs ordered: <span id = "hotdogs"></span> </p>
+                        <p> Fries ordered: <span id = "fries"></span> </p>
+                        <p> Drinks ordered: <span id = "drinks"></span> </p>
+                        <p> Subtotal: $<span id = "origSubtotal"></span> </p> 
+                        <p> Discount: $<span id = "discount"></span> </p>
+                        <p id = "discountedSubtotal"> </p>
+                        <p> Tax: $<span id = "tax" ></span> </p>
+                        <p> Final total: $<span id = "finalSubtotal"></span> </p>
+                        <script>
+                                let numHotdogs = prompt("How many hotdogs do you want? ($4.25 each)");
+                                let numFries = prompt("How many fries do you want? ($2.60 each)");
+                                let numDrinks = prompt("How many drinks do you want? ($1.50 each)");
+
+                                numHotdogs = Number(numHotdogs);
+                                numFries = Number(numFries);
+                                numDrinks = Number(numDrinks);
+                                let haveDiscount = false;
+
+                                let subTotal = 4.25 * numHotdogs + 2.6 * numFries + 1.5 * numDrinks;
+                                let discount = 0;
+                                if (subTotal > 20.0) {
+                                        discount = 0.10 * subTotal;
+                                        discountedSubtotal = subTotal - discount;
+                                        haveDiscount = true;
+                                }
+
+                                let finalTotal = 0;
+                                let tax = 0;
+                                if (haveDiscount) {
+                                        finalTotal = 1.0625 * discountedSubtotal;
+                                        tax = 0.0625 * discountedSubtotal;
+                                }
+                                else {
+                                        finalTotal = 1.0625 * subTotal;
+                                        tax = 0.0625 * subTotal;
+                                }
+
+
+                                document.getElementById("hotdogs").innerHTML = numHotdogs;
+                                document.getElementById("fries").innerHTML = numFries;
+                                document.getElementById("drinks").innerHTML = numDrinks;
+                                document.getElementById("origSubtotal").innerHTML = subTotal.toFixed(2);
+                                document.getElementById("discount").innerHTML = discount.toFixed(2);
+                                if (haveDiscount) {
+                                        document.getElementById("discountedSubtotal").innerHTML = "Discounted subtotal: " + 
+                                        discountedSubtotal.toFixed(2);
+                                }
+                                document.getElementById("tax").innerHTML = tax.toFixed(2);
+                                document.getElementById("finalSubtotal").innerHTML = finalTotal.toFixed(2);
+                        </script>
+                </div>
+
+                <div class = "receiptCard">
+                        <img src = "soda.jpg">
+                </div>
+        </div>
+</body>
+</html>

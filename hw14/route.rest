@@ -1,0 +1,17 @@
+GET http://localhost:3000/equities
+
+###
+
+POST http://localhost:3000/equities
+Content-Type: application/json
+
+{
+    "company_name": "Apple",
+    "stock_ticker": "APPL"
+}
+
+###
+
+DELETE http://localhost:3000/equities/637946573338dc32365575d0
+
+###

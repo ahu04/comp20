@@ -1,0 +1,48 @@
+{
+    "title": "Vienna",
+    "artist": "Billey Joel", 
+    "genre": [
+        "Soft Rock", 
+        "Pop"
+    ],
+
+    "title": "Best Friend",
+    "artist": "Rex Orange County",
+    "genre": [
+        "Indie",
+        "Pop"
+    ],
+
+    "title": "Pluto Projector",
+    "artist": "Rex Orange County",
+    "genre": [
+        "Indie",
+        "Pop"
+    ],
+
+    "title": "Curduroy Dreams",
+    "artist": "Rex Orange County",
+    "genre": ["Indie"],
+
+    "title": "Sunflower",
+    "artist": "Rex Orange County",
+    "genre": [
+        "Indie",
+        "Pop"
+    ],
+
+    "title": "Television / So Far So Good",
+    "artist": "Rex Orange County",
+    "genre": [
+        "Indie",
+        "Pop"
+    ],
+
+    "title": "The Spins",
+    "artist": "Mac Miller",
+    "genre": [ "Hip-hop", "Pop" ],
+
+    "title": "Blue World",
+    "artist": "Mac Miller",
+    "genre": [ "Hip-hop", "Pop" ]
+}

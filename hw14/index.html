@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Stock Ticker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+
+<body onload="getData()">
+    <h1>Stock Ticker</h1>
+    <br>
+    <!-- input element to read in and parse the csv file -->
+    <input type="file" name="file" id="file">
+    <!-- div to display data, empty initially -->
+    <div id="data"></div>
+    <!-- toggle button to show/hide data from mongodb database -->
+    <button id="showDataButton" onclick="showData()">Show Data</button>
+    <br><br>
+    <h2>Search for a company or ticker</h2>
+    <br>
+    <form>
+        <input type="text" id="searchInput" name="searchInput" placeholder="Search name or ticker">
+        <br>
+        <input type="radio" id="company_name" name="searchOption" value="company_name">
+        <label for="company_name">Company Name</label><br>
+        <input type="radio" id="stock_ticker" name="searchOption" value="stock_ticker">
+        <label for="stock_ticker">Stock Ticker</label><br>  
+        <br>
+        <input type="button" value="Search" id="searchBtn" onclick="searchData()"/>
+        <br>
+    </form>
+    <div id="searchData"></div>
+</body>
+
+<script>
+    // read in CSV file and upload/send/post data to mongodb database
+    const $output = document.getElementById('output')
+    document.getElementById('file').onchange = function () {
+        var file = this.files[0];
+
+        var reader = new FileReader();
+        reader.onload = function (progressEvent) {
+            const text = this.result;
+
+            // read line by line
+            var lines = text.split('\n');
+            // split the csv file
+            for (var line = 1; line < lines.length; line++) {
+                console.log(lines[line]);
+                var data = lines[line].split(',');
+                var dataObject = {
+                    company_name: data[0],
+                    stock_ticker: data[1].slice(0, -1)
+                }
+                // post all entries to the mongodb database
+                postData(dataObject);
+                // then get data again (so now when you click show data, 
+                // it shows updated entries)
+                getData();
+            }
+        };
+        reader.readAsText(file);
+    };
+
+    // post data from CSV file to mongodb database
+    async function postData(data) {
+        const res = await axios.post("http://localhost:3000/equities", data);
+        // debugging statement to check that data is posted correctly
+        console.log(res.data);
+    }
+
+    // get all entries from mongodb database and display on page
+    async function getData() {
+        const res = await axios.get("http://localhost:3000/equities");
+        if (res.data.length == 0) {
+            // mongodb database is empty lol upload a csv
+            document.getElementById("data").innerHTML = "No entries found."
+        } else {
+
+            // res.data is where all the data lies. now it's up to you
+            // to choose how you want to display it :)
+
+            // populate table of entries to display on page
+            document.getElementById("data").innerHTML = ""
+            var table = "<table class='dataTable'>";
+            table += "<tr>";
+            table += "<th>Company Name</th>"
+            table += "<th>Stock Ticker</th>"
+            table += "</tr>"
+            // go through each entry in the mongodb database and create
+            // new row in the table
+            res.data.forEach((entry) => {
+                table += "<tr>"
+                table += "<td>" + entry.company_name + "</td>"
+                table += "<td>" + entry.stock_ticker + "</td>"
+                table += "</tr>"
+            })
+            table += "</table>"
+
+            // display table on the page
+            document.getElementById("data").innerHTML = table;
+        }
+    }
+
+    // function to search data from mongodb database
+    // either thru stock ticker, or company name
+    async function searchData() {
+        const data = document.getElementById("searchInput").value;
+        let res;
+        // check radio button
+        if (document.getElementById("stock_ticker").checked) {
+            // pass in the search input to the routes via ${data}
+            res = await axios.get(`http://localhost:3000/equities/ticker/${data}`);
+        } else {
+            res = await axios.get(`http://localhost:3000/equities/company/${data}`);
+        }
+
+        // res.data is where all the data lies. now it's up to you
+        // to choose how you want to display it :)
+        
+        // for checking later on if table was actually populated
+        var emptyState = "<table class='dataTable'><tr><th>Company Name</th><th>Stock Ticker</th></tr></table>"
+
+        // create table of results
+        var table = "<table class='dataTable'>";
+            table += "<tr>";
+            table += "<th>Company Name</th>"
+            table += "<th>Stock Ticker</th>"
+            table += "</tr>"
+        // populate table with info from search results
+        res.data.forEach((data) => {
+            table += "<tr>"
+                table += "<td>" + data.company_name + "</td>"
+                table += "<td>" + data.stock_ticker + "</td>"
+                table += "</tr>"
+        })
+        table += "</table>"
+
+        // means that no results were found
+        if (table == emptyState) {
+            document.getElementById("searchData").innerHTML = "<br>Not found."
+        } else {
+            // display table on the page
+            document.getElementById("searchData").innerHTML = table
+        }
+    }
+
+    // toggle between showing and hiding data on the page
+    async function showData() {
+        var dataDiv = document.getElementById("data");
+        if (dataDiv.style.display == "block") {
+            dataDiv.style.display = "none";
+            document.getElementById("showDataButton").innerHTML = "Show Data"
+        } else {
+            dataDiv.style.display = "block";
+            document.getElementById("showDataButton").innerHTML = "Hide Data"
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+hr {
+        width: 50vw;
+    }
+    
+    body {
+        display: grid;
+        place-items: left;
+        padding-left: 100px;
+        margin-top: 3vh;
+        font-family: 'Times New Roman', Times, serif
+    }
+    
+    .receiptbody > h3 {
+        font-weight: normal;
+        font-family: Georgia, 'Times New Roman', Times, serif
+    }
+    
+    body > h1 { 
+        color: rgb(2, 38, 19);
+    }
+    
+    input {
+        padding-inline: 15px;
+        padding-block: 5px;
+        font-size: 15px;
+        background-color: rgb(241, 241, 241);
+        border-radius: 20px;
+        border: 0px solid black;
+    }
+    
+    input[type="button"] {
+        cursor: pointer;
+        color: rgb(2, 38, 19);
+        background-color: #4866fa; 
+    }
+    
+    input[type="button"]:hover {
+        cursor: pointer;
+        color: white;
+        background-color: #1000f3; 
+    }
+    
+    .ordercontainer {
+        width: 50vw;
+        font-family: 'Times New Roman', Times, serif
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
